@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#16000000" />
+        </shape>
+        <!--
+            #32000000
+            32 is opacity
+            000000 is the color black
+            0% #00
+            10% #16
+            20% #32
+            30% #48
+            40% #64
+            50% #80
+            60% #96
+            70% #112
+            80% #128
+            90% #144
+        -->
+    </item>
+    <item android:left="0dp"
+        android:right="0dp"
+        android:top="0dp"
+        android:bottom="5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#f6cc2e" />
+        </shape>
+    </item>
+
+
+</layer-list>

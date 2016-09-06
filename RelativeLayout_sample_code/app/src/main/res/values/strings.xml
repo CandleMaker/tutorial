@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RelativeLayout_sample_code</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="reminder">Reminder name</string>
+	<string name="editText1">Sample Text 1</string>
+	<string name="editText2">Sample Text 2</string>
+
+</resources>

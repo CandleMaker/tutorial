@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <item
+        android:id="@+id/archive"
+        android:title="Archive"
+		android:icon="@drawable/ic_archive_black_48dp"
+		app:showAsAction="ifRoom"
+		android:orderInCategory="2"
+		/>
+	
+	<item
+		android:id="@+id/alarm"
+		android:title="Alarm"
+		android:icon="@drawable/ic_alarm_add_black_48dp"
+		app:showAsAction="ifRoom"
+		android:orderInCategory="1"
+		/>
+    
+</menu>

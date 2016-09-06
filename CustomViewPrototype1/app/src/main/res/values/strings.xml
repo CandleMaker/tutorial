@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CustomViewPrototype1</string>
+    <string name="app_title">Notes</string>
+    <string name="bottom_bar_note">Take a note...</string>
+</resources>
