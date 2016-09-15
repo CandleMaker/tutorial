@@ -1,5 +1,6 @@
 package com.example.michaeljosephdescalzo.fragmentrestoretest3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private DBClass dbClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     /** Respond to add Fragment button */
     public void addFrag(View view){
-        Toast.makeText(getApplicationContext(), "button test",Toast.LENGTH_SHORT).show();
-
+        dbClass = new DBClass(this);
+        if(dbClass.insertView("text")){
+            Toast.makeText(getApplicationContext(), "button test",Toast.LENGTH_SHORT).show();
+        }
         //Initialize textView
         TextView textView = new TextView(this);
         textView.setText("hello");
@@ -42,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
         //Get parent container
         LinearLayout rl =(LinearLayout)findViewById(R.id.fragment_container);
         rl.addView(linearLayout);
+
+    }
+
+    /** Read Sql button */
+    public void execSql(View view){
+        //
+        dbClass = new DBClass(this);
+        Toast.makeText(getApplicationContext(), dbClass.countAll().toString(),Toast.LENGTH_SHORT).show();
+
     }
 
 }
