@@ -49,4 +49,13 @@ public class DBClass extends SQLiteOpenHelper{
         res.moveToFirst();
         return res.getInt(0);
     }
+	
+	public void deleteAll(){
+
+		SQLiteDatabase sqliteDatabase = this.getWritableDatabase();
+		sqliteDatabase.execSQL(
+			"DELETE FROM view_storage"
+		);
+		return;
+	}
 }

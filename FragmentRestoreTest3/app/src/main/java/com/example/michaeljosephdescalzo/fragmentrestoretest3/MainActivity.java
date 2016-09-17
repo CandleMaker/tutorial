@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public void addFrag(View view){
         dbClass = new DBClass(this);
         if(dbClass.insertView("text")){
-            Toast.makeText(getApplicationContext(), "button test",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "View inserted",Toast.LENGTH_SHORT).show();
         }
         //Initialize textView
         TextView textView = new TextView(this);
@@ -56,5 +56,18 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), dbClass.countAll().toString(),Toast.LENGTH_SHORT).show();
 
     }
+	
+	/** Delete all contents of db */
+	public void deleteAll(View view){
+
+		dbClass = new DBClass(this);
+		dbClass.deleteAll();
+	}
+	
+	/** Restore views */
+	public void restoreViews(View view){
+
+	
+	}
 
 }
