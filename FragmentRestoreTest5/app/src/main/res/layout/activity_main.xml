@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="addText"
+            android:onClick="addFragText" />
+
+        <Button
+            android:id="@+id/button_add_butt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="addButt"
+            android:onClick="addFragButton"
+            android:layout_toRightOf="@id/button_add_text"/>
+
+        <Button
+            android:id="@+id/button_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="count"
+            android:onClick="countAll"
+            android:layout_below="@id/button_add_text"/>
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="delete"
+            android:onClick="deleteAll"
+            android:layout_toRightOf="@id/button_count"
+            android:layout_below="@id/button_add_text"/>
+
+        <Button
+            android:id="@+id/button_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="remove"
+            android:onClick="removeAll"
+            android:layout_toRightOf="@id/button_add_butt"/>
+
+        <Button
+            android:id="@+id/button_restore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="restore"
+            android:onClick="restoreAll"
+            android:layout_toRightOf="@id/button_delete"
+            android:layout_below="@id/button_remove"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+</LinearLayout>

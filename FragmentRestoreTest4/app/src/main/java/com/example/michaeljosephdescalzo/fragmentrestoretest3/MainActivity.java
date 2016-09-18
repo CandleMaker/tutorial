@@ -1,14 +1,11 @@
 package com.example.michaeljosephdescalzo.fragmentrestoretest3;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,30 +24,33 @@ public class MainActivity extends AppCompatActivity {
         dbClass = new DBClass(this);
         maxId = dbClass.countAll();
 
-        if(dbClass.insertView("text")){
-            Toast.makeText(getApplicationContext(), "View inserted",Toast.LENGTH_SHORT).show();
-        }
-        //Initialize textView
-        TextView textView = new TextView(this);
-        textView.setText("hello");
-        textView.setTextSize(22);
-        textView.setId(maxId + 1);
+//        if(dbClass.insertView("text")){
+//            Toast.makeText(getApplicationContext(), "View inserted",Toast.LENGTH_SHORT).show();
+//        }
+//        //Initialize textView
+//        TextView textView = new TextView(this);
+//        textView.setText("hello");
+//        textView.setTextSize(22);
 
-        //Setup FrameLayout parameters
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        textView.setLayoutParams(lp);
+//        //Setup FrameLayout parameters
+//        FrameLayout.LayoutParams flChildViewParam = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL);
+//        textView.setLayoutParams(flChildViewParam);
 
         //Initialize Framelayout
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        FrameLayout.LayoutParams flp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        FrameLayout frameLayout = new FrameLayout(this);
+        frameLayout.setLayoutParams(flp);
+        frameLayout.setId(View.generateViewId());
 
-        //Add views
-        linearLayout.addView(textView);
+//        //add view to FrameLayout
+//        frameLayout.addView(textView);
 
-        //Get parent container
-        LinearLayout rl =(LinearLayout)findViewById(R.id.fragment_container);
-        rl.addView(linearLayout);
+        //Get Parent Container
+        LinearLayout ll =(LinearLayout)findViewById(R.id.fragment_container);
+//        ll.addView(frameLayout);
 
+        TestFragment testFragment = new TestFragment();
+        getSupportFragmentManager().beginTransaction().add((maxId + 1), testFragment).commit();
     }
 
     /** Read Sql button */

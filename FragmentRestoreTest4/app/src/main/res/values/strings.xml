@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Fragment Restore Test 3</string>
+    <string name="button_addFrag">Add Fragment</string>
+</resources>
